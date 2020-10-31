@@ -57,8 +57,7 @@ int main()
     c.print();
 
     cout << "A % B = ";
-    c = a % b;
-    c.print();
+   
 
     cout << "A + B = ";
     c = a + b;

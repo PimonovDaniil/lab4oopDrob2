@@ -10,16 +10,6 @@ namespace mathTools
         vector<double> m_data;
         void swap(polynomial& m);
 
-        friend polynomial& operator+=(polynomial& polynomial1, const polynomial& polynomial2);
-        friend polynomial operator+(polynomial& polynomial1, const polynomial& polynomial2);
-        friend polynomial& operator-=(polynomial& polynomial1, const polynomial& polynomial2);
-        friend polynomial operator-(polynomial& polynomial1, const polynomial& polynomial2);
-        friend polynomial& operator*=(polynomial& polynomial1, const polynomial& polynomial2);
-        friend polynomial operator*(polynomial& polynomial1, const polynomial& polynomial2);
-        friend polynomial& operator/=(polynomial& polynomial1, const polynomial& polynomial2);
-        friend polynomial operator/(polynomial& polynomial1, const polynomial& polynomial2);
-        friend polynomial& operator%=(polynomial& polynomial1, const polynomial& polynomial2);
-        friend polynomial operator%(polynomial& polynomial1, const polynomial& polynomial2);
     public:
 
         polynomial& operator=(const polynomial& other); // присваивание
@@ -30,7 +20,7 @@ namespace mathTools
         
         polynomial(polynomial&& m) noexcept; //move
 
-        double& operator()(double x);
+        double operator()(double x);
 
         void set(int size, double* m_data);
 
@@ -42,6 +32,16 @@ namespace mathTools
 
         void print();
 
+        friend polynomial& operator+=(polynomial& polynomial1, const polynomial& polynomial2);
+        friend polynomial operator+(polynomial& polynomial1, const polynomial& polynomial2);
+        friend polynomial& operator-=(polynomial& polynomial1, const polynomial& polynomial2);
+        friend polynomial operator-(polynomial& polynomial1, const polynomial& polynomial2);
+        friend polynomial& operator*=(polynomial& polynomial1, const polynomial& polynomial2);
+        friend polynomial operator*(polynomial& polynomial1, const polynomial& polynomial2);
+        friend polynomial& operator/=(polynomial& polynomial1, const polynomial& polynomial2);
+        friend polynomial operator/(polynomial& polynomial1, const polynomial& polynomial2);
+        friend polynomial& operator%=(polynomial& polynomial1, const polynomial& polynomial2);
+        friend polynomial operator%(polynomial& polynomial1, const polynomial& polynomial2);
     };
 
 }

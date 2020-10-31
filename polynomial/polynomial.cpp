@@ -35,7 +35,7 @@ namespace mathTools
 		swap(m);
 	}
 
-	double& polynomial::operator()(double x)
+	double polynomial::operator()(double x)
 	{
 		double res = 0.0;
 		for (int i = 0; i < this->m_data.size(); i++) 
