@@ -25,7 +25,7 @@ namespace mathTools
 		return *this;
 	}
 
-	polynomial::polynomial(polynomial& other)
+	polynomial::polynomial(const polynomial& other)
 	{
 		this->m_data = other.m_data;
 	}
@@ -103,7 +103,7 @@ namespace mathTools
 		return polynomial1;
 	}
 
-	polynomial operator+(polynomial& polynomial1, const polynomial& polynomial2)
+	polynomial operator+(const polynomial& polynomial1, const polynomial& polynomial2)
 	{
 		polynomial res(polynomial1);
 		res += polynomial2;
@@ -126,7 +126,7 @@ namespace mathTools
 		return polynomial1;
 	}
 
-	polynomial operator-(polynomial& polynomial1, const polynomial& polynomial2)
+	polynomial operator-(const polynomial& polynomial1, const polynomial& polynomial2)
 	{
 		polynomial res(polynomial1);
 		res -= polynomial2;
@@ -149,7 +149,7 @@ namespace mathTools
 		return polynomial1;
 	}
 
-	polynomial operator*(polynomial& polynomial1, const polynomial& polynomial2)
+	polynomial operator*(const polynomial& polynomial1, const polynomial& polynomial2)
 	{
 		polynomial res(polynomial1);
 		res *= polynomial2;
@@ -199,51 +199,10 @@ namespace mathTools
 		return polynomial1;
 	}
 
-	polynomial operator/(polynomial& polynomial1, const polynomial& polynomial2)
+	polynomial operator/(const polynomial& polynomial1, const polynomial& polynomial2)
 	{
 		polynomial res(polynomial1);
 		res /= polynomial2;
-		return res;
-	}
-
-	polynomial& operator%=(polynomial& polynomial1, const polynomial& polynomial2)
-	{
-		vector<double>  del;
-		vector<double>  res;
-		vector<double>  v1;
-		vector<double>  v2;
-		vector<double>  v3;
-		for (int i = polynomial2.m_data.size() - 1; i >= 0; i--)
-			del.push_back(polynomial2.m_data[i]);
-		for (int i = polynomial1.m_data.size() - 1; i >= 0; i--)
-			v1.push_back(polynomial1.m_data[i]);
-		while (v1.size() >= del.size())
-		{
-			res.push_back(v1[0] / del[0]);
-			for (int i = 1; i < del.size(); i++)
-				v2.push_back(del[i] * res[res.size() - 1]);
-
-			for (int i = 0; i < v2.size(); i++)
-				v3.push_back(v1[i + 1] - v2[i]);
-
-			for (int i = del.size(); i < v1.size(); i++) {
-				v3.push_back(v1[i]);
-			}
-
-
-			v1 = v3;
-			v2.clear(); v3.clear();
-		}
-		reverse(v1.begin(), v1.end());
-		polynomial1.m_data = v1;
-		polynomial1.delNull();
-		return polynomial1;
-	}
-
-	polynomial operator%(polynomial& polynomial1, const polynomial& polynomial2)
-	{
-		polynomial res(polynomial1);
-		res %= polynomial2;
 		return res;
 	}
 
