@@ -18,7 +18,7 @@ namespace mathTools
         return fraction1;
 	}
 
-    fraction operator+(fraction& fraction1, const fraction& other)
+    fraction operator+(const fraction& fraction1, const fraction& other)
     {
         fraction res(fraction1);
         res += other;
@@ -36,7 +36,7 @@ namespace mathTools
         return fraction1;
     }
 
-    fraction operator-(fraction& fraction1, const fraction& other)
+    fraction operator-(const fraction& fraction1, const fraction& other)
     {
         fraction res(fraction1);
         res -= other;
@@ -51,7 +51,7 @@ namespace mathTools
         return fraction1;
     }
 
-    fraction operator*(fraction& fraction1, const fraction& other)
+    fraction operator*(const fraction& fraction1, const fraction& other)
     {
         fraction res(fraction1);
         res *= other;
@@ -66,7 +66,7 @@ namespace mathTools
         return fraction1;
     }
 
-    fraction operator/(fraction& fraction1, const fraction& other)
+    fraction operator/(const fraction& fraction1, const fraction& other)
     {
         fraction res(fraction1);
         res /= other;
@@ -108,7 +108,7 @@ namespace mathTools
         return this->numerator / this->denominator;
     }
 
-    fraction::fraction(fraction& other)
+    fraction::fraction(const fraction& other)
     {
         this->denominator = other.denominator;
         this->numerator = other.numerator;

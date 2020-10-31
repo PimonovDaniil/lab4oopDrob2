@@ -9,13 +9,13 @@ namespace mathTools
         int denominator;
 
         friend fraction& operator+=(fraction& fraction1, const fraction& fraction2);
-        friend fraction operator+(fraction& fraction1, const fraction& other);
+        friend fraction operator+(const fraction& fraction1, const fraction& other);
         friend fraction& operator-=(fraction& fraction1, const fraction& fraction2);
-        friend fraction operator-(fraction& fraction1, const fraction& other);
+        friend fraction operator-(const fraction& fraction1, const fraction& other);
         friend fraction& operator*=(fraction& fraction1, const fraction& fraction2);
-        friend fraction operator*(fraction& fraction1, const fraction& other);
+        friend fraction operator*(const fraction& fraction1, const fraction& other);
         friend fraction& operator/=(fraction& fraction1, const fraction& fraction2);
-        friend fraction operator/(fraction& fraction1, const fraction& other);
+        friend fraction operator/(const fraction& fraction1, const fraction& other);
 
         unsigned gcd(unsigned a, unsigned b); //рекурсивный евклид
         void swap(fraction& m);
@@ -26,7 +26,7 @@ namespace mathTools
 
         int divMode(int &a);
 
-        fraction(fraction& other);/*конструктор копирования*/
+        fraction(const fraction& other) ;/*конструктор копирования*/
 
         fraction(fraction&& m) noexcept; //move
 
