@@ -10,7 +10,7 @@ namespace mathTools
 
         unsigned gcd(unsigned a, unsigned b); //рекурсивный евклид
         void swap(fraction& m);
-
+        bool isValid();
         void sokrDrop(); //сокращает дробь
 
     public:

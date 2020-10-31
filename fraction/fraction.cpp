@@ -33,6 +33,7 @@ namespace mathTools
         fraction1.numerator = n1 - n2;
         fraction1.denominator = d;
         fraction1.sokrDrop();
+        if (!fraction1.isValid()) throw "Не валидный объект";
         return fraction1;
     }
 
@@ -48,6 +49,7 @@ namespace mathTools
         fraction1.numerator *= fraction2.numerator;
         fraction1.denominator *= fraction2.denominator;
         fraction1.sokrDrop();
+        if (!fraction1.isValid()) throw "Не валидный объект";
         return fraction1;
     }
 
@@ -63,6 +65,7 @@ namespace mathTools
         fraction1.numerator *= fraction2.denominator;
         fraction1.denominator *= fraction2.numerator;
         fraction1.sokrDrop();
+        if (!fraction1.isValid()) throw "Не валидный объект";
         return fraction1;
     }
 
@@ -90,6 +93,11 @@ namespace mathTools
     {
         std::swap(this->numerator, m.numerator);
         std::swap(this->denominator, m.denominator);
+    }
+
+    bool fraction::isValid()
+    {
+        return this->denominator != 0;
     }
 
     void fraction::sokrDrop()

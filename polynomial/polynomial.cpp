@@ -112,8 +112,9 @@ namespace mathTools
 
 	polynomial& operator-=(polynomial& polynomial1, const polynomial& polynomial2)
 	{
-		if (polynomial1.m_data.size() < polynomial2.m_data.size()) throw "Не надо так";
-		int m = min(polynomial1.m_data.size(), polynomial2.m_data.size());
+		while (polynomial1.m_data.size() < polynomial2.m_data.size())
+			polynomial1.m_data.push_back(0);
+		int m = polynomial2.m_data.size();
 		for (int i = 0; i < m; i++) {
 			if (i < polynomial1.m_data.size()) {
 				polynomial1.m_data[i] -= polynomial2.m_data[i];
