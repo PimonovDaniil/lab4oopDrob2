@@ -24,6 +24,8 @@ namespace mathTools
 
         fraction& operator=(const fraction& other); // присваивание
 
+        void setNumerator(int a);
+        void setDenominator(int a);
         void set(int numerator, int denominator); //установка значений
 
         int getNumerator(); //вернуть числитель
@@ -31,7 +33,6 @@ namespace mathTools
         double get(); //вернуть десятичную дробь
 
         int divMode(int& a);
-
         void print(); // вывод на экран
 
         friend fraction& operator+=(fraction& fraction1, const fraction& fraction2);

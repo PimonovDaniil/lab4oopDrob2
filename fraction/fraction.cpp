@@ -159,6 +159,17 @@ namespace mathTools
         return *this;
     }
 
+    void fraction::setNumerator(int a)
+    {
+        this->numerator = a;
+    }
+
+    void fraction::setDenominator(int a)
+    {
+        if (a == 0)throw "деление на 0";
+        this->denominator = a;
+    }
+
     void fraction::print()
     {
         printf("%d/%d\n", this->numerator, this->denominator);
