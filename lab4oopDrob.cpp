@@ -53,10 +53,17 @@ int main()
     cout << b(2) << "\n\n";
 
     cout << "A / B = ";
-    c = a / b;
-    c.print();
+    polynomial mod;
+    polynomial del;
+
+    //c = a / b;
+    del = c.delMod(a, b, mod);
+    del.print();
 
     cout << "A % B = ";
+    mod.print();
+    
+
    
 
     cout << "A + B = ";

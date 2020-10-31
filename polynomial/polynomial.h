@@ -26,6 +26,8 @@ namespace mathTools
 
         void delNull();
         void print();
+        polynomial delMod(const polynomial& polynomial1, const polynomial& polynomial2, polynomial& polynomial3);
+
 
         friend polynomial& operator+=(polynomial& polynomial1, const polynomial& polynomial2);
         friend polynomial operator+(const polynomial& polynomial1, const polynomial& polynomial2);
@@ -33,8 +35,7 @@ namespace mathTools
         friend polynomial operator-(const polynomial& polynomial1, const polynomial& polynomial2);
         friend polynomial& operator*=(polynomial& polynomial1, const polynomial& polynomial2);
         friend polynomial operator*(const polynomial& polynomial1, const polynomial& polynomial2);
-        friend polynomial& operator/=(polynomial& polynomial1, const polynomial& polynomial2);
-        friend polynomial operator/(const polynomial& polynomial1, const polynomial& polynomial2);
+        
         
     };
 
